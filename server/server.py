@@ -14,6 +14,10 @@ client = genai.Client(api_key=google_api_key)
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({"message": "heeeeeeello world"})
+
 # ==== In-memory storage ====
 intent_history = {}  # { intent: [ {query, answer} ] }
 
