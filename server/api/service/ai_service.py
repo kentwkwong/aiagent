@@ -1,5 +1,5 @@
 from google import genai
-from .service.db_service import save_message
+from db_service import save_message
 from dotenv import load_dotenv
 import os
 
