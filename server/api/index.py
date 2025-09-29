@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from service.ai_service import ask_ai
-from service.db_service import get_user_history
+from .service.ai_service import ask_ai
+from .service.db_service import get_user_history
 
 
 app = Flask(__name__)
