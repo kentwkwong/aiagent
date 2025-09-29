@@ -6,19 +6,10 @@ import os
 load_dotenv()
 
 google_api_key = os.getenv("GOOGLE_API_KEY")
-# google_api_key = "AIzaSyBJXQkPMxPBD00uF4z9VOwRNEwxO4ahE40"
-
-
-
 client = genai.Client(api_key=google_api_key)
-
-
-
-
 
 def ask_ai(email, question):
     try:
-        print("cp1")
         model = "gemini-2.0-flash"
         prompt = f"""
         You are an intent classifier. Given the user query below, reply with ONE intent category only, 
@@ -30,12 +21,10 @@ def ask_ai(email, question):
             contents=prompt
         )
         intent = response.text.strip()
-        print("cp2")
         response = client.models.generate_content(
             model=model,
             contents=question
         )
-        print("cp3")
         answer = response.text.strip()
         # 3️⃣ Save to MongoDB Atlas
         save_message(email, intent, question, answer)
