@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Login from "./pages/Login";
+// import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AiAgent from "./pages/AiAgent";
 import AskAIPage from "./pages/AskAiPage";
@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<AskAIPage />} />
         <Route path="/aiagent" element={<AiAgent />} />
         <Route path="/askaipage" element={<AskAIPage />} />
         <Route
