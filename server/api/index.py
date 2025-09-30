@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from .service.ai_service import ask_ai
 from .service.db_service import get_user_history
 
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 
 @app.route('/', methods=['GET'])
 def index():
